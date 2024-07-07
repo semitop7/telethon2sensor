@@ -1,0 +1,29 @@
+---
+name: Teleton to Home Assistant
+version: 1.0.1
+slug: Teleton2Sensor
+description: Telegram chatbot messages listener for Home Assistant
+url: https://github.com/semitop7/ha-sensor-teleton
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+image: python:3.9-slim
+homeassistant_api: true
+usb: true
+map:
+  - share:rw
+  - addons
+init: false
+options:
+  api_id: ""
+  api_hash: ""
+  chat_bot_username: ""
+  debug: false
+schema:
+  api_id: str
+  api_hash: str
+  chat_bot_username: str
+  debug: bool

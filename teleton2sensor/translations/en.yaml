@@ -1,0 +1,14 @@
+---
+configuration:
+  api_id:
+    name: Telegram application id
+    description: The Telegram application id.
+  api_hash:
+    name: Telegram application hash
+    description: The Telegram application hash.
+  chat_bot_username:
+    name: Telegram chat name
+    description: The Telegram chat name.
+  debug:
+    name: Debug Mode
+    description: Enable debug mode. Check the log tab for output.
