@@ -1,0 +1,14 @@
+---
+configuration:
+  api_id:
+    name: Ідентифікатор додатку Telegram
+    description: Ідентифікатор додатку Telegram.
+  api_hash:
+    name: Хеш додатку Telegram
+    description: Хеш додатку Telegram.
+  chat_bot_username:
+    name: Назва чату в додатку Telegram
+    description: Назва чату в додатку Telegram.
+  debug:
+    name: Режи розробника
+    description: Включити режим розробника. Перейдіть у вкладку логування для перегляду.
