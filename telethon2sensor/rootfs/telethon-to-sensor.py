@@ -18,7 +18,7 @@ API_ID = args.api_id
 API_HASH = args.api_hash
 API_SESSION_FILE_PATH = args.api_session_file_path
 CHAT_BOT_USERNAME = args.chat_bot_username
-HA_BASE_URL = 'http://supervisor/core/api/'
+HA_BASE_URL = 'http://supervisor/core/api'
 HA_TOKEN = args.ha_token
 KEYWORDS = ['відсутня електроенергія', 'відключення']
 
