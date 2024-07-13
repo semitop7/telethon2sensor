@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Home Assistant Add-on: Teleton2Sensor
+# Home Assistant Add-on: Telethon2Sensor
 # Telegram chatbot messages listener for Home Assistant.
 # ==============================================================================
 
@@ -19,11 +19,11 @@ fi
 
 args=()
 
-bashio::log.info 'Starting teleton-to-sensor...'
+bashio::log.info 'Starting telethon-to-sensor...'
 bashio::log.info "Directory $(dirname "$0")"
 args+=( \
 	--api_id ${API_ID} \
 	--api_hash ${API_HASH} \
 	--chat_bot_username ${CHAT_BOT_USERNAME} \
 	--ha_token ${SUPERVISOR_TOKEN})
-python $(dirname "$0")/teleton-to-sensor.py ${args[@]}
+python $(dirname "$0")/telethon-to-sensor.py ${args[@]}

@@ -1,4 +1,4 @@
-# Teleton2Sensor
+# Telethon2Sensor
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
 ![Supports armhf Architecture][armhf-shield]
@@ -7,9 +7,9 @@
 
 Telegram chatbot messages listener for Home Assistant.
 
-This is a simple Home Assistant add-on for [Teleton](https://github.com/LonamiWebs/Telethon).
+This is a simple Home Assistant add-on for [Telethon](https://github.com/LonamiWebs/Telethon).
 
-This add-on for send notification and create sensor by Telegram chatbot messages listener by [Teleton](https://github.com/LonamiWebs/Telethon) python library.
+This add-on for send notification and create sensor by Telegram chatbot messages listener by [Telethon](https://github.com/LonamiWebs/Telethon) python library.
 
 ___
 

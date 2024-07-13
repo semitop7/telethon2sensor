@@ -1,4 +1,4 @@
-# Teleton2Sensor
+# Telethon2Sensor
 
 This addon is designed to integrate Telegram with the Home Assistant. 
 
@@ -31,4 +31,4 @@ ___
 
 For more information, please refer to the following:
 
-- Github repository: [Teleton](https://github.com/LonamiWebs/Telethon)
+- Github repository: [Telethon](https://github.com/LonamiWebs/Telethon)
