@@ -15,7 +15,7 @@ homeassistant_api: true
 usb: true
 map:
   - share:rw
-  - addons
+  - addons:rw
 init: false
 options:
   api_id: ""
