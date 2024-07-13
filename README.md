@@ -15,4 +15,24 @@ Select the three dot menu in the upper right, choose `Repositories`, and add the
 https://github.com/semitop7/ha-sensor-telethon
 ```
 
-Refresh the page (hard refresh may be required), scroll down to Bluetti2MQTT and install the add-on.
+Refresh the page (hard refresh may be required), scroll down to Telethon2Sensor and install the add-on.
+
+## Add-ons
+
+This repository contains the following add-ons:
+
+### [Telethon2Sensor](./telethon2sensor)
+
+![Supports aarch64 Architecture][aarch64-shield]
+![Supports amd64 Architecture][amd64-shield]
+![Supports armhf Architecture][armhf-shield]
+![Supports armv7 Architecture][armv7-shield]
+![Supports i386 Architecture][i386-shield]
+
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+
+_Telegram chatbot messages listener for Home Assistant._
