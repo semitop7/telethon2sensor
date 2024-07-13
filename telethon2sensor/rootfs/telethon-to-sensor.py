@@ -13,6 +13,7 @@ parser.add_argument('--ha_token', required=True, help='Home Assistant Long-Lived
 args = parser.parse_args()
 
 # Constants
+API_SESSION_FILE_PATH = args.api_session_file_path
 API_ID = args.api_id
 API_HASH = args.api_hash
 CHAT_BOT_USERNAME = args.chat_bot_username
@@ -28,7 +29,7 @@ HEADERS = {
     'content-type': 'application/json',
 }
 
-client = TelegramClient('homeassistant7', API_ID, API_HASH)
+client = TelegramClient(API_SESSION_FILE_PATH, API_ID, API_HASH)
 
 def send_notification(message, title):
     data = {

@@ -18,6 +18,10 @@ ___
 
 > Telegram application hash.
 
+### Required: `api_session_file_path`
+
+> Telegram session file path.
+
 ### Required: `chat_bot_username`
 
 > Telegram chat name.
