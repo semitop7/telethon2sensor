@@ -8,14 +8,15 @@ from datetime import datetime, timedelta, timezone
 parser = argparse.ArgumentParser(description='Telegram chatbot messages listener for Home Assistant.')
 parser.add_argument('--api_id', required=True, help='API ID for Telegram client')
 parser.add_argument('--api_hash', required=True, help='API Hash for Telegram client')
+parser.add_argument('--api_session_file_path', required=True, help='API session file path for Telegram client')
 parser.add_argument('--chat_bot_username', required=True, help='Username of the bot to listen to')
 parser.add_argument('--ha_token', required=True, help='Home Assistant Long-Lived Access Token')
 args = parser.parse_args()
 
 # Constants
-API_SESSION_FILE_PATH = args.api_session_file_path
 API_ID = args.api_id
 API_HASH = args.api_hash
+API_SESSION_FILE_PATH = args.api_session_file_path
 CHAT_BOT_USERNAME = args.chat_bot_username
 HA_BASE_URL = 'http://supervisor/core/api/'
 HA_TOKEN = args.ha_token
