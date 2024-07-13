@@ -42,18 +42,20 @@ def send_notification(message, title):
     else:
         print(f'Failed to send confirmation message: {response.text}')
 
-def create_automation(automation_time):
-    automation = {
+def create_sensor(automation_time):
+    sensor_body = {
         "state": automation_time.isoformat(),
         "attributes": {
             "friendly_name": "AC200MAX Turn on AC inverter at time"
         }
     }
 
-    response = requests.post(HTTP_SENSOR_URL, json=automation, headers=HEADERS)
+    response = requests.post(HTTP_SENSOR_URL, json=sensor_body, headers=HEADERS)
 
     if 200 <= response.status_code <= 202:
         print('Automation created/updated successfully.')
+
+        # Send notification
         automation_time_str = automation_time.strftime("%Y-%m-%d %H:%M")
         confirmation_message = f"Шановний m'lord!\nАвтоматизацію на увімкнення Bluetti AC200MAX АС інвертору створено на {automation_time_str}.\nHome Assistant все виконає автоматично замість вас, розслабтесь та насолоджуйтесь життям!"
         send_notification(confirmation_message, 'Automation Created')
@@ -80,8 +82,8 @@ async def main():
 
                 print(f'Start time automation: {start_time}')
 
-                # Create automation
-                create_automation(start_time)
+                # Create sensor
+                create_sensor(start_time)
 
     print('Listening for new messages...')
     await client.run_until_disconnected()
