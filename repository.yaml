@@ -1,4 +1,4 @@
 ---
-name: Telegram2Sensor
-url: https://github.com/semitop7/ha-sensor-telethon
+name: Telethon2Sensor
+url: https://github.com/semitop7/telethon2sensor
 maintainer: semitop7
