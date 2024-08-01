@@ -1,5 +1,6 @@
 import argparse
-from telethon import TelegramClient, events
+from telethon.sync import TelegramClient, events
+from telethon.sessions import StringSession
 import requests
 import re
 from datetime import datetime, timedelta, timezone
@@ -8,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 parser = argparse.ArgumentParser(description='Telegram chatbot messages listener for Home Assistant.')
 parser.add_argument('--api_id', required=True, help='API ID for Telegram client')
 parser.add_argument('--api_hash', required=True, help='API Hash for Telegram client')
-parser.add_argument('--api_session_file_path', required=True, help='API session file path for Telegram client')
+parser.add_argument('--api_session', required=True, help='API string session for Telegram client')
 parser.add_argument('--chat_bot_username', required=True, help='Username of the bot to listen to')
 parser.add_argument('--ha_token', required=True, help='Home Assistant Long-Lived Access Token')
 args = parser.parse_args()
@@ -16,7 +17,7 @@ args = parser.parse_args()
 # Constants
 API_ID = args.api_id
 API_HASH = args.api_hash
-API_SESSION_FILE_PATH = args.api_session_file_path
+API_STRING_SESSION = args.api_session
 CHAT_BOT_USERNAME = args.chat_bot_username
 HA_BASE_URL = 'http://supervisor/core/api'
 HA_TOKEN = args.ha_token
@@ -30,7 +31,8 @@ HEADERS = {
     'content-type': 'application/json',
 }
 
-client = TelegramClient(API_SESSION_FILE_PATH, API_ID, API_HASH)
+client = TelegramClient(StringSession(API_STRING_SESSION), API_ID, API_HASH)
+
 
 def send_notification(message, title):
     data = {
@@ -43,6 +45,7 @@ def send_notification(message, title):
         print('Confirmation message sent to Home Assistant')
     else:
         print(f'Failed to send confirmation message: {response.text}')
+
 
 def create_sensor(automation_time):
     sensor_body = {
@@ -63,6 +66,7 @@ def create_sensor(automation_time):
         send_notification(confirmation_message, 'Automation Created')
     else:
         print(f'Failed to create automation: {response.text}')
+
 
 async def main():
     bot = await client.get_entity(CHAT_BOT_USERNAME)

@@ -6,9 +6,9 @@ configuration:
   api_hash:
     name: Хеш додатку Telegram
     description: Хеш додатку Telegram.
-  api_session_file_path:
-    name: Шлях до файлу активної сессії Telegram
-    description: Шлях до файлу активної сессії Telegram.
+  api_session:
+    name: Активна Telegram сессія
+    description: Активна Telegram сессія у вигляді строки.
   chat_bot_username:
     name: Назва чату в додатку Telegram
     description: Назва чату в додатку Telegram.

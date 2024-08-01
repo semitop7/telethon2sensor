@@ -6,9 +6,9 @@ configuration:
   api_hash:
     name: Telegram application hash
     description: The Telegram application hash.
-  api_session_file_path:
-    name: Telegram session file path
-    description: The path to Telegram session file.
+  api_session:
+    name: Telegram string session
+    description: The Telegram string session key.
   chat_bot_username:
     name: Telegram chat name
     description: The Telegram chat name.
