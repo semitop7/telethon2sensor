@@ -58,11 +58,15 @@ For testing go to you Telegram chat bot chat and send message like
 
 Go to **Home Assistant** and check **Notifications**.
 
+![Notification](https://github.com/semitop7/telethon2sensor/blob/main/pics/notification.png?raw=true)
+
 Go to **Home Assistant** -> **Developer Tools** -> **TEMPLATE** tab and check sensor value.
 
 ```
 {{ states('sensor.datetime_scheduled') }}
 ```
+
+![Sensor](https://github.com/semitop7/telethon2sensor/blob/main/pics/sensor.png?raw=true)
 
 Then you can use this sensor in ***Home Assistant Automations*** in template trigger. 
 
