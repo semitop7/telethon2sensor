@@ -1,5 +1,9 @@
-# Telethon2Sensor
-Home Assistant Add-on for send notification and create sensor by Telegram chatbot messages listener by [Telethon](https://github.com/LonamiWebs/Telethon) python library
+[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua/)
+
+![HA Lviv PowerOff Logo](https://github.com/tsdaemon/ha-lviv-poweroff/blob/827c15582bb64c70568f6f7b322e926feeaa2592/icons/icon.png?raw=true)
+
+# ⚡️ Telethon2Sensor
+Home Assistant Add-on for send notification and create sensor by Telegram chatbot messages listener by [Telethon](https://github.com/LonamiWebs/Telethon) python library. First of all, this application was developed to interact with the Telegram bot from the energy company [LvivOblEnergo](https://loe.lviv.ua/), but it can be adapted for other Telegram bots.
 
 ![update-badge](https://img.shields.io/github/last-commit/semitop7/telethon2sensor?label=Last%20Updated)
 
@@ -16,6 +20,57 @@ https://github.com/semitop7/telethon2sensor
 ```
 
 Refresh the page (hard refresh may be required), scroll down to Telethon2Sensor and install the add-on.
+
+## Creating your Telegram Application
+
+Follow instructions here [documentation](https://core.telegram.org/api/obtaining_api_id).
+Then you will have access to the data about the application (App api_id, App api_hash), which is required for the addon.
+
+## Generate Telegram String Session
+For generate telegram string session
+Use ./utils/session_generator.py
+
+Require python and telethon library
+
+```
+pip install telethon==1.36.0
+python ./utils/session_generator.py
+```
+
+If script successfully run you will see request for input. Follow input steps to generate telegram string session.
+
+```
+Enter your API_ID : 
+```
+
+After finished all steps check telegram "Saved Messages" chat to find you telegram string session.
+
+## Usage
+
+This integration is configurable via UI.
+
+For testing go to you Telegram chat bot chat and send message like
+
+```
+Шановний клієнте!
+На період з 03.08.2024 12:00 до 14:00 заплановані стабілізаційні відключення (застосування ГПВ).
+```
+
+Go to **Home Assistant** and check **Notifications**.
+
+Go to **Home Assistant** -> **Developer Tools** -> **TEMPLATE** tab and check sensor value.
+
+```
+{{ states('sensor.datetime_scheduled') }}
+```
+
+Then you can use this sensor in ***Home Assistant Automations*** in template trigger. 
+
+```
+{% set scheduled_time_3_min_before = as_datetime(states('sensor.datetime_scheduled'), '1987-01-01T00:00:00+03:00' | as_datetime ) - timedelta(minutes=3) %}
+
+{% if scheduled_time_3_min_before <= now() <= scheduled_time_3_min_before + timedelta(minutes=1) %}true{% endif %}
+```
 
 ## Add-ons
 

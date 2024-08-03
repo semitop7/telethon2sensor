@@ -11,6 +11,7 @@ parser.add_argument('--api_id', required=True, help='API ID for Telegram client'
 parser.add_argument('--api_hash', required=True, help='API Hash for Telegram client')
 parser.add_argument('--api_session', required=True, help='API string session for Telegram client')
 parser.add_argument('--chat_bot_username', required=True, help='Username of the bot to listen to')
+parser.add_argument('--confirmation_message', required=True, help='Home Assistant notification message')
 parser.add_argument('--ha_token', required=True, help='Home Assistant Long-Lived Access Token')
 args = parser.parse_args()
 
@@ -19,12 +20,13 @@ API_ID = args.api_id
 API_HASH = args.api_hash
 API_STRING_SESSION = args.api_session
 CHAT_BOT_USERNAME = args.chat_bot_username
+CONFIRMATION_MESSAGE = args.confirmation_message
 HA_BASE_URL = 'http://supervisor/core/api'
 HA_TOKEN = args.ha_token
 KEYWORDS = ['відсутня електроенергія', 'відключення']
 
 NOTIFICATION_URL = f'{HA_BASE_URL}/services/persistent_notification/create'
-HTTP_SENSOR_URL = f'{HA_BASE_URL}/states/sensor.ac200max_input_power_scheduled'
+HTTP_SENSOR_URL = f'{HA_BASE_URL}/states/sensor.datetime_scheduled'
 
 HEADERS = {
     'Authorization': f'Bearer {HA_TOKEN}',
@@ -62,7 +64,7 @@ def create_sensor(automation_time):
 
         # Send notification
         automation_time_str = automation_time.strftime("%Y-%m-%d %H:%M")
-        confirmation_message = f"Шановний m'lord!\nАвтоматизацію на увімкнення Bluetti AC200MAX АС інвертору створено на {automation_time_str}.\nHome Assistant все виконає автоматично замість вас, розслабтесь та насолоджуйтесь життям!"
+        confirmation_message = CONFIRMATION_MESSAGE.format(time=automation_time_str)
         send_notification(confirmation_message, 'Automation Created')
     else:
         print(f'Failed to create automation: {response.text}')

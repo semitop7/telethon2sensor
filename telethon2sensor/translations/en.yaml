@@ -12,6 +12,9 @@ configuration:
   chat_bot_username:
     name: Telegram chat name
     description: The Telegram chat name.
+  confirmation_message:
+    name: Home Assistant notification message
+    description: The Home Assistant notification message template.
   debug:
     name: Debug Mode
     description: Enable debug mode. Check the log tab for output.

@@ -12,6 +12,9 @@ configuration:
   chat_bot_username:
     name: Назва чату в додатку Telegram
     description: Назва чату в додатку Telegram.
+  confirmation_message:
+    name: Шаблон для сповіщення Home Assistant
+    description: Шаблон для сповіщення Home Assistant.
   debug:
     name: Режи розробника
     description: Включити режим розробника. Перейдіть у вкладку логування для перегляду.
