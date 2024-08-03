@@ -18,10 +18,7 @@ options:
   api_hash: ""
   api_session: ""
   chat_bot_username: "@loeserviceBot"
-  confirmation_message: |
-    Шановний m'lord!
-    Автоматизацію на увімкнення Bluetti AC200MAX АС інвертору створено на {time}.
-    Home Assistant все виконає автоматично замість вас, розслабтесь та насолоджуйтесь життям!
+  confirmation_message: "Шановний m'lord!\\nАвтоматизацію на увімкнення Bluetti AC200MAX АС інвертору створено на {time}.\\nHome Assistant все виконає автоматично замість вас, розслабтесь та насолоджуйтесь життям!"
   debug: false
 schema:
   api_id: str

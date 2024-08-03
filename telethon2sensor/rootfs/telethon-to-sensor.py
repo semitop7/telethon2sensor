@@ -38,7 +38,7 @@ client = TelegramClient(StringSession(API_STRING_SESSION), API_ID, API_HASH)
 
 def send_notification(message, title):
     data = {
-        'message': message,
+        'message': message.replace('\\n', '\n'),
         'title': title,
     }
     response = requests.post(NOTIFICATION_URL, json=data, headers=HEADERS)
