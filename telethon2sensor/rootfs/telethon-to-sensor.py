@@ -3,7 +3,7 @@ from telethon.sync import TelegramClient, events
 from telethon.sessions import StringSession
 import requests
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import datetime
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description='Telegram chatbot messages listener for Home Assistant.')
@@ -85,8 +85,8 @@ async def main():
 
                 start_time = datetime.strptime(start_time_str, '%d.%m.%Y %H:%M')
 
-                tz = timezone(timedelta(hours=3))
-                start_time = start_time.replace(tzinfo=tz)
+                server_timezone = datetime.now().astimezone().tzinfo
+                start_time = start_time.replace(tzinfo=server_timezone)
 
                 print(f'Start time automation: {start_time}')
 
