@@ -1,3 +1,6 @@
+## [1.0.4] - 2024-12-14
+- Adapt logic for new message type sending by leo bot
+
 ## [1.0.3] - 2024-11-17
 - Fix timezone, get timezone info from server
 - Update telethon version to 1.37.0
