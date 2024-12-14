@@ -1,3 +1,8 @@
+## [1.0.5] - 2024-12-14
+- Fix RegExp
+- Update telethon version to 1.38.1
+- Update image ghcr.io/hassio-addons/base-python to version 16.0.1 
+
 ## [1.0.4] - 2024-12-14
 - Adapt logic for new message type sending by leo bot
 
