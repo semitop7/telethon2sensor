@@ -79,7 +79,7 @@ async def main():
 
         if any(keyword in message for keyword in KEYWORDS):
             # Parse message
-            match = re.search(r'з (\d{2}\.\d{2}\.\d{4} \d{2}:\d{2})', message)
+            match = re.search(r'з (\d{2}:\d{2})(?: до (\d{2}:\d{2}))?', message)
             if match:
                 start_time_str = match.group(1)
 
