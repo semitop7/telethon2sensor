@@ -1,3 +1,6 @@
+## [1.0.6] - 2024-12-14
+- Rollback RegExp
+
 ## [1.0.5] - 2024-12-14
 - Fix RegExp
 - Update telethon version to 1.38.1
