@@ -1,3 +1,8 @@
+## [1.0.7] - 2025-10-30
+- Update telethon version to 1.41.2
+- Update requests version to 2.32.5
+- Update image ghcr.io/hassio-addons/base-python to version 17.0.0
+
 ## [1.0.6] - 2024-12-14
 - Rollback RegExp
 
