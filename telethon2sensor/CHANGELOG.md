@@ -1,3 +1,9 @@
+## [1.1.0] - 2026-03-16
+- Update telethon version to 1.42.0
+- Add aiohttp version 3.13.3
+- Update image ghcr.io/hassio-addons/base-python to version 18.0.0
+- Refactor logic
+
 ## [1.0.7] - 2025-10-30
 - Update telethon version to 1.41.2
 - Update requests version to 2.32.5
